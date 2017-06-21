@@ -55,6 +55,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="coverImage" destination="zBX-2J-z8x" id="fpK-Y6-3JU"/>
                                             <outlet property="overviewLabel" destination="YYg-4m-H7d" id="hCS-hj-oEB"/>
                                             <outlet property="titleLabel" destination="zAW-fm-pan" id="HAE-K0-nJw"/>
                                         </connections>

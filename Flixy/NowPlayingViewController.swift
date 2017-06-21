@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource {
 
@@ -16,6 +17,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize a UIRefreshControl
+        // let refreshControl = UIRefreshControl()
         
         tableView.dataSource = self
         
@@ -49,6 +53,12 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         let overview = movie["overview"] as! String
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
+        
+        let posterPathString = movie["poster_path"] as! String
+        let baseURLString = "https://image.tmdb.org/t/p/w185"
+        
+        let posterURL = URL(string: baseURLString + posterPathString)!
+        cell.coverImage.af_setImage(withURL: posterURL)
         
         return cell
     }
