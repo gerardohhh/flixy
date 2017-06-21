@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7E6E4FFD1EFB138100E2E0F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E4FFC1EFB138100E2E0F8 /* AppDelegate.swift */; };
-		7E6E4FFF1EFB138100E2E0F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E4FFE1EFB138100E2E0F8 /* ViewController.swift */; };
 		7E6E50021EFB138100E2E0F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E50001EFB138100E2E0F8 /* Main.storyboard */; };
 		7E6E50041EFB138100E2E0F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E50031EFB138100E2E0F8 /* Assets.xcassets */; };
 		7E6E50071EFB138100E2E0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E50051EFB138100E2E0F8 /* LaunchScreen.storyboard */; };
 		7E6E50121EFB138100E2E0F8 /* FlixyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E50111EFB138100E2E0F8 /* FlixyTests.swift */; };
 		7E6E501D1EFB138100E2E0F8 /* FlixyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E501C1EFB138100E2E0F8 /* FlixyUITests.swift */; };
+		7E900D7A1EFB1DB500364736 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		7E6E4FF91EFB138100E2E0F8 /* Flixy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flixy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6E4FFC1EFB138100E2E0F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7E6E4FFE1EFB138100E2E0F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7E6E50011EFB138100E2E0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7E6E50031EFB138100E2E0F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E6E50061EFB138100E2E0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		7E6E50181EFB138100E2E0F8 /* FlixyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6E501C1EFB138100E2E0F8 /* FlixyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixyUITests.swift; sourceTree = "<group>"; };
 		7E6E501E1EFB138100E2E0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		7E6E4FFB1EFB138100E2E0F8 /* Flixy */ = {
 			isa = PBXGroup;
 			children = (
+				7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */,
 				7E6E4FFC1EFB138100E2E0F8 /* AppDelegate.swift */,
-				7E6E4FFE1EFB138100E2E0F8 /* ViewController.swift */,
 				7E6E50001EFB138100E2E0F8 /* Main.storyboard */,
 				7E6E50031EFB138100E2E0F8 /* Assets.xcassets */,
 				7E6E50051EFB138100E2E0F8 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E6E4FFF1EFB138100E2E0F8 /* ViewController.swift in Sources */,
+				7E900D7A1EFB1DB500364736 /* NowPlayingViewController.swift in Sources */,
 				7E6E4FFD1EFB138100E2E0F8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +505,7 @@
 				7E6E50231EFB138100E2E0F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E6E50241EFB138100E2E0F8 /* Build configuration list for PBXNativeTarget "FlixyTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				7E6E50261EFB138100E2E0F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7E6E50271EFB138100E2E0F8 /* Build configuration list for PBXNativeTarget "FlixyUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +523,7 @@
 				7E6E50291EFB138100E2E0F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
