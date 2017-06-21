@@ -39,7 +39,7 @@
                                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wonder Woman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAW-fm-pan">
-                                                    <rect key="frame" x="130" y="18" width="228" height="21"/>
+                                                    <rect key="frame" x="130" y="24" width="228" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                     <nil key="textColor"/>
@@ -56,7 +56,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="overviewLabel" destination="YYg-4m-H7d" id="hCS-hj-oEB"/>
-                                            <outlet property="title" destination="zAW-fm-pan" id="w8V-6Z-Ahb"/>
+                                            <outlet property="titleLabel" destination="zAW-fm-pan" id="HAE-K0-nJw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
