@@ -9,14 +9,17 @@
 import UIKit
 import AlamofireImage
 
-class NowPlayingViewController: UIViewController, UITableViewDataSource {
+class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies: [[String: Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        activityIndicator.startAnimating()
         
         // Initialize a UIRefreshControl
         let refreshControl = UIRefreshControl()
@@ -24,6 +27,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         tableView.insertSubview(refreshControl, at: 0)
         
         tableView.dataSource = self
+        tableView.delegate = self
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=8ab5fb42722f7bbca141a05b54f53087")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
@@ -39,8 +43,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
                 self.tableView.reloadData()
             }
         }
-        
         task.resume()
+        
+        activityIndicator.stopAnimating()
     }
     
     // Makes a network request to get updated data
@@ -67,6 +72,11 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
             }
         }
         task.resume()
+    }
+    
+    // Remove gray effect
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // Returns number of rows
