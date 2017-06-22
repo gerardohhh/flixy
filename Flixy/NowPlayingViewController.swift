@@ -74,7 +74,7 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         return movies.count
     }
     
-    // Implements cells for table
+    // Implements movie cells
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         let movie = movies[indexPath.row]
@@ -90,6 +90,16 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource {
         cell.coverImage.af_setImage(withURL: posterURL)
         
         return cell
+    }
+    
+    // Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell) {
+            let movie = movies[indexPath.row]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.movie = movie
+        }
     }
     
 

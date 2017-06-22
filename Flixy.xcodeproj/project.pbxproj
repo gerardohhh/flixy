@@ -16,6 +16,7 @@
 		7E6E50071EFB138100E2E0F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E6E50051EFB138100E2E0F8 /* LaunchScreen.storyboard */; };
 		7E6E50121EFB138100E2E0F8 /* FlixyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E50111EFB138100E2E0F8 /* FlixyTests.swift */; };
 		7E6E501D1EFB138100E2E0F8 /* FlixyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6E501C1EFB138100E2E0F8 /* FlixyUITests.swift */; };
+		7E7531DC1EFC692C00DA66DF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7531DB1EFC692C00DA66DF /* DetailViewController.swift */; };
 		7E900D7A1EFB1DB500364736 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */; };
 		7E900D7C1EFB274400364736 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E900D7B1EFB274400364736 /* MovieCell.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		7E6E50181EFB138100E2E0F8 /* FlixyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlixyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E6E501C1EFB138100E2E0F8 /* FlixyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlixyUITests.swift; sourceTree = "<group>"; };
 		7E6E501E1EFB138100E2E0F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E7531DB1EFC692C00DA66DF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 		7E900D7B1EFB274400364736 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		A1E68E27F09462A573EE0CC6 /* Pods-FlixyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlixyUITests/Pods-FlixyUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,13 +131,13 @@
 		7E6E4FFB1EFB138100E2E0F8 /* Flixy */ = {
 			isa = PBXGroup;
 			children = (
-				7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */,
+				7E7531DA1EFC690700DA66DF /* Views */,
+				7E7531D91EFC68F000DA66DF /* View Controllers */,
 				7E6E4FFC1EFB138100E2E0F8 /* AppDelegate.swift */,
 				7E6E50001EFB138100E2E0F8 /* Main.storyboard */,
 				7E6E50031EFB138100E2E0F8 /* Assets.xcassets */,
 				7E6E50051EFB138100E2E0F8 /* LaunchScreen.storyboard */,
 				7E6E50081EFB138100E2E0F8 /* Info.plist */,
-				7E900D7B1EFB274400364736 /* MovieCell.swift */,
 			);
 			path = Flixy;
 			sourceTree = "<group>";
@@ -156,6 +158,23 @@
 				7E6E501E1EFB138100E2E0F8 /* Info.plist */,
 			);
 			path = FlixyUITests;
+			sourceTree = "<group>";
+		};
+		7E7531D91EFC68F000DA66DF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7E900D791EFB1DB500364736 /* NowPlayingViewController.swift */,
+				7E7531DB1EFC692C00DA66DF /* DetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		7E7531DA1EFC690700DA66DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7E900D7B1EFB274400364736 /* MovieCell.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EFDD99E9C71A60B5A4A1578A /* Frameworks */ = {
@@ -452,6 +471,7 @@
 				7E900D7A1EFB1DB500364736 /* NowPlayingViewController.swift in Sources */,
 				7E6E4FFD1EFB138100E2E0F8 /* AppDelegate.swift in Sources */,
 				7E900D7C1EFB274400364736 /* MovieCell.swift in Sources */,
+				7E7531DC1EFC692C00DA66DF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
