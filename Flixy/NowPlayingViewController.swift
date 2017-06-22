@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 
 class NowPlayingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -18,6 +18,15 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let alertController = UIAlertController(title: "Cannot get movies", message: "The internet connection appears to be offline", preferredStyle: .alert)
+        
+        // create a cancel action
+        let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in
+            // handle cancel response here. Doing nothing will dismiss the view.
+        }
+        // add the cancel action to the alertController
+        alertController.addAction(cancelAction)
         
         activityIndicator.startAnimating()
         
@@ -36,22 +45,35 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
             // Runs when the network request returns
             if let error = error {
                 print(error.localizedDescription)
+                UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
+                    self.activityIndicator.stopAnimating()
+                }
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
         task.resume()
         
-        activityIndicator.stopAnimating()
     }
     
     // Makes a network request to get updated data
     // Updates the tableView with the new data
     // Hides the RefreshControl
     func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        
+        let alertController = UIAlertController(title: "Cannot get movies", message: "The internet connection appears to be offline", preferredStyle: .alert)
+        
+        // create a cancel action
+        let cancelAction = UIAlertAction(title: "Try Again", style: .cancel) { (action) in
+            // handle cancel response here. Doing nothing will dismiss the view.
+        }
+        // add the cancel action to the alertController
+        alertController.addAction(cancelAction)
         
         // ... Create the URLRequest `myRequest` ...
         
@@ -63,12 +85,17 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
             // Runs when the network request returns
             if let error = error {
                 print(error.localizedDescription)
+                UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
+                    refreshControl.endRefreshing()
+                }
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
                 self.tableView.reloadData()
                 refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
             }
         }
         task.resume()
@@ -112,9 +139,9 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
