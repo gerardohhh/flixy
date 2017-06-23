@@ -9,19 +9,21 @@
 import UIKit
 
 class SuperheroViewController: UIViewController, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var movies: [[String: Any]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         collectionView.dataSource = self
+        
+        activityIndicator.startAnimating()
         
         fetchMovies()
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
@@ -46,20 +48,32 @@ class SuperheroViewController: UIViewController, UICollectionViewDataSource {
             // Runs when the network request returns
             if let error = error {
                 print(error.localizedDescription)
+                self.activityIndicator.stopAnimating()
             } else if let data = data {
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 let movies = dataDictionary["results"] as! [[String: Any]]
                 self.movies = movies
                 self.collectionView.reloadData()
+                self.activityIndicator.stopAnimating()
                 // refreshControl.endRefreshing()
             }
         }
         task.resume()
     }
-
+    
+    // Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UICollectionViewCell
+        if let indexPath = collectionView.indexPath(for: cell) {
+            let movie = movies[indexPath.item]
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.movie = movie
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
 }
