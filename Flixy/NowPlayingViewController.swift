@@ -75,8 +75,6 @@ class NowPlayingViewController: UIViewController, UITableViewDataSource, UITable
         // add the cancel action to the alertController
         alertController.addAction(cancelAction)
         
-        // ... Create the URLRequest `myRequest` ...
-        
         // Configure session so that completion handler is executed on main UI thread
         let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=8ab5fb42722f7bbca141a05b54f53087")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 10)
