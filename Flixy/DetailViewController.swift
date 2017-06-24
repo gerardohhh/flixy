@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         if let movie = movie {
             titleLabel.text = movie[MovieKeys.title] as? String
+            self.title = movie[MovieKeys.title] as? String
             releaseDateLabel.text = movie[MovieKeys.release_date] as? String
             overviewLabel.text = movie[MovieKeys.overview] as? String
             let backdropPathString = movie[
