@@ -50,7 +50,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAW-fm-pan">
-                                                    <rect key="frame" x="114" y="16" width="253" height="21.5"/>
+                                                    <rect key="frame" x="114" y="16" width="38.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,12 +66,12 @@
                                                 <constraint firstItem="zBX-2J-z8x" firstAttribute="leading" secondItem="hcH-dH-hak" secondAttribute="leadingMargin" constant="8" id="0jj-yH-gRZ"/>
                                                 <constraint firstItem="zAW-fm-pan" firstAttribute="top" secondItem="zBX-2J-z8x" secondAttribute="top" id="1Xr-UM-HOw"/>
                                                 <constraint firstItem="YYg-4m-H7d" firstAttribute="leading" secondItem="zAW-fm-pan" secondAttribute="leading" id="3Hw-MM-fxp"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YYg-4m-H7d" secondAttribute="bottom" constant="8" id="PAP-uw-KuU"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YYg-4m-H7d" secondAttribute="bottom" constant="8" id="51g-up-Mwa"/>
                                                 <constraint firstItem="zAW-fm-pan" firstAttribute="leading" secondItem="zBX-2J-z8x" secondAttribute="trailing" constant="8" id="Q9S-TJ-0w6"/>
                                                 <constraint firstItem="zBX-2J-z8x" firstAttribute="top" secondItem="hcH-dH-hak" secondAttribute="topMargin" constant="8" id="Xmm-bB-RlJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="zBX-2J-z8x" secondAttribute="bottom" constant="8" id="cva-6i-jeO"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="zBX-2J-z8x" secondAttribute="bottom" constant="8" id="cva-6i-jeO"/>
                                                 <constraint firstAttribute="trailing" secondItem="YYg-4m-H7d" secondAttribute="trailing" constant="8" id="rxh-o5-Sq3"/>
-                                                <constraint firstAttribute="trailing" secondItem="zAW-fm-pan" secondAttribute="trailing" constant="8" id="w5i-R4-6Ge"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zAW-fm-pan" secondAttribute="trailing" constant="8" id="w5i-R4-6Ge"/>
                                                 <constraint firstItem="YYg-4m-H7d" firstAttribute="top" secondItem="zAW-fm-pan" secondAttribute="bottom" constant="8" id="y3S-ny-MNf"/>
                                             </constraints>
                                         </tableViewCellContentView>
